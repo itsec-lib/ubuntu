@@ -1,0 +1,15 @@
+
+# Edit file /etc/cloud/cloud.cfg
+Change:
+preserve_hostname: false
+to:
+preserve_hostname: true
+
+# Edit  /etc/sysctl.conf
+Change: 
+net.ipv4.ip_forward=0
+to:
+net.ipv4.ip_forward=1
+
+Configure PAT for the traffic leaving external internface:
+iptables -A POSTROUTING -t nat -o ens33 -j MASQUERADE
