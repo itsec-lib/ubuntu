@@ -1,0 +1,23 @@
+#Edit file  /etc/netplan/50-cloud-init.yaml
+
+network:
+      dhcp4: no
+      dhcp6: no
+      addresses: [192.168.100.10/24, ]
+      gateway4:  192.168.100.1
+      nameservers:
+              addresses: [8.8.8.8, 8.8.4.4]
+    version: 2
+
+# Edit file /etc/cloud/cloud.cfg
+Change:
+preserve_hostname: false
+to:
+preserve_hostname: true
+
+# Edit  /etc/sysctl.conf
+Change: 
+net.ipv4.ip_forward=0
+to:
+net.ipv4.ip_forward=1
+
