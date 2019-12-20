@@ -8,16 +8,3 @@ network:
       nameservers:
               addresses: [8.8.8.8, 8.8.4.4]
     version: 2
-
-# Edit file /etc/cloud/cloud.cfg
-Change:
-preserve_hostname: false
-to:
-preserve_hostname: true
-
-# Edit  /etc/sysctl.conf
-Change: 
-net.ipv4.ip_forward=0
-to:
-net.ipv4.ip_forward=1
-
